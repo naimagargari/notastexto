@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 
 const App = () => {
   const [notas, setNotas] = useState([]);
@@ -6,7 +7,7 @@ const App = () => {
   useEffect(() => {
     const fetchNotas = async () => {
       try {
-        // Realizar una solicitud GET al endpoint 
+        // Realizar una solicitud GET al endpoint
         const response = await fetch("http://localhost:3000/api/notas");
 
         if (!response.ok) {
@@ -26,7 +27,7 @@ const App = () => {
 
     // Llamar a la función de obtención de notas
     fetchNotas();
-  }, []); 
+  }, []);
 
   return (
     <div>
@@ -50,4 +51,3 @@ const App = () => {
 };
 
 export default App;
-
